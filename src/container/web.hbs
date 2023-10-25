@@ -1,0 +1,34 @@
+<div>
+  <main>
+    {{> title big=true data='Web Languages'}}
+    <hr />
+
+    {{#with web}}
+      {{#each languages}}
+        <dl>
+            <dt>{{name}}</dt>
+            <dd>
+                <b>Version:</b>
+                {{version}}
+                <br />
+
+                <p>{{description}}</p>
+
+                {{#each elements}}
+                    {{> table data=attributes bracket=true}}
+                {{/each}}
+
+                {{#each properties}}
+                    {{> table data=values bracket=true}}
+                {{/each}}
+
+                {{#each functions}} 
+                    {{> table data=parameters bracket=false type=true}}
+                {{/each}}
+
+            </dd>
+        </dl>
+      {{/each}}
+    {{/with}}
+  </main>
+</div>
