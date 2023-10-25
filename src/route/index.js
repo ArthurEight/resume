@@ -621,7 +621,7 @@ router.get('/web', function (req, res) {
                 'Displays an alert box with a specified message and an OK button.',
               parameters: [
                 {
-                  name: 'message',
+                  value: 'message',
                   type: 'string',
                   description:
                     'The message to display in the alert box.',
@@ -634,7 +634,7 @@ router.get('/web', function (req, res) {
                 'Returns the element with the specified ID.',
               parameters: [
                 {
-                  name: 'id',
+                  value: 'id',
                   type: 'string',
                   description:
                     'The ID of the element to find.',

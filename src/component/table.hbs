@@ -18,7 +18,12 @@
   <tbody>
     {{#each data}}
       <tr>
-        <td rowspan='2'>{{value}}</td>
+        <td rowspan='2'>
+          {{value}}
+          {{#if type}}
+            ({{type}})
+          {{/if}}
+        </td>
       </tr>
       <tr>
         <td colspan='2'>{{description}}</td>
