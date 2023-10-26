@@ -1,0 +1,75 @@
+<div>
+  <main>
+    {{> title big=true data=name}}
+    <hr />
+    
+    <div>
+        <p>{{description}}</p>
+
+        <p>
+            {{#with history}}
+                {{year}},
+                {{founder}}
+            {{/with}}
+        </p>
+    </div>
+
+    <br />
+    <br />
+
+    {{> listprimary data=types text='Types'}}
+
+    {{> listprimary data=features text='Features'}}
+
+    {{> listprimary data=libraries text='Libraries'}}
+
+    {{> listprimary data=tools text='Tools'}}
+
+    <br />
+
+    <div>
+        {{#with syntax}}
+            <span class="badge text-bg-primary fs-6">Syntax</span>
+            <hr />
+            
+            {{> listsecondary data=variables text='Variables'}}
+
+            {{> listsecondary data=functions text='Functions'}}
+
+            {{> listsecondary data=conditionals text='Conditionals'}}
+
+            {{> listsecondary data=loops text='Loops'}}
+
+            {{> listsecondary data=classes text='Classes'}}
+
+        {{/with}}
+    </div>
+
+    <hr />
+
+    <div>
+        <ul>
+            <li>
+                <div>
+                    <span class='badge text-bg-primary fs-6 w-25'>Community</span>
+                    <br />
+                    <br />
+                    {{#each community}}
+                        
+                            <ul class='list-group w-25 list-style-type-none'>
+                                <li class='list-group-item text-center'>
+                                   {{type}}
+                                </li>
+                                <li class='list-group-item'>
+                                    <button type="button" class="btn btn-link ">{{name}}</button>
+                                </li>
+                            </ul>
+
+                            <br />
+                    {{/each}}
+                </div>
+            </li>
+        </ul> 
+    </div>
+  </main>
+</div>
