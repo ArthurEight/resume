@@ -1,0 +1,235 @@
+<div>
+  <main>
+    {{> title big=true data=make}}
+    <hr />
+
+    <div>
+        <span class="fs-4">General Characteristics</span>
+        <br />
+        <br />
+
+        <span class="badge text-bg-primary p-2 w-50">General</span>
+        <ul class="list-group">
+            {{> listinfo data=make text="Make"}}
+            {{> listinfo data=model text="Model"}}                   
+            {{> listinfo data=year text='Year'}}
+            {{> listinfo data=color text='Color'}}
+        </ul>
+    </div>
+    
+    <br />
+
+    <div>
+        {{#with features}}
+            <span class="fs-4">Features</span>
+            <br />
+            <br />
+
+            {{#with interior}}
+                <span class="fs-5">Interior</span>
+                <hr />
+                <br />
+
+                {{#with seats}}
+                    <span class="badge text-bg-primary p-2 w-50">Seats</span>
+                    <ul class="list-group">
+                        {{> listinfo data=material text="Material"}}
+                        {{> listinfo data=color text="Color"}}                   
+                        {{> listcheck data=heated text='Heated'}}
+                        {{> listcheck data=ventilated text='Ventilated'}}
+                    </ul>
+                {{/with}}
+
+                <br />
+                
+                {{#with dashboard}}
+                    <span class="badge text-bg-primary p-2 w-50">Dashboard</span>
+                    <ul class="list-group">
+                        {{> listinfo data=material text="Material"}}
+                        {{> listinfo data=color text="Color"}}
+                        <li class="list-group-item d-flex justify-content-between align-items-center w-50">
+                            {{#with display}}
+                                <span class="badge text-bg-secondary p-2 ">Display</span>
+                                {{type}},
+                                {{size}},
+                                {{resolution}}
+                            {{/with}}
+                        </li>
+                        {{> listcheck data=display.touchscreen text='Touchscreen'}}
+                    </ul>
+                {{/with}}
+
+                <br />
+
+                {{#with audio}}
+                    <span class="badge text-bg-primary p-2 w-50">Audio</span>
+                    <ul class="list-group">
+                        {{> listinfo data=system text="System"}}  
+                        {{> listinfo data=speakers text="Speakers"}}  
+                        {{> listcheck data=subwoofer text='Subwoofer'}}
+                        {{> listcheck data=bluetooth text='Bluetooth'}}
+                        {{> listcheck data=USB text='USB'}}
+                    </ul>
+                {{/with}}
+            {{/with}}
+
+            <br />
+            <br />
+
+            <span class="fs-5">Exterior</span>
+            <hr />
+            <br />
+
+
+            {{#with exterior}}
+                {{#with wheels}}
+                    <span class="badge text-bg-primary p-2 w-50">Wheels</span>
+                    <ul class="list-group">
+                        {{> listinfo data=size text="Size"}}  
+                        {{> listinfo data=type text="Type"}}  
+                        {{> listinfo data=color text="Color"}}  
+                    </ul>
+                {{/with}}
+
+                <br />
+
+                {{#with headlights}}
+                    <span class="badge text-bg-primary p-2 w-50">Headlights</span>
+                    <ul class="list-group">
+                        {{> listinfo data=type text="Type"}}
+                        {{> listinfo data=brightness text="Brightness"}}
+                        {{> listcheck data=automatic text='Automatic'}}
+                    </ul>
+                {{/with}}
+
+                <br />
+
+                {{#with sunroof}}
+                    <span class="badge text-bg-primary p-2 w-50">Sunroof</span>
+                    <ul class="list-group">
+                        {{> listinfo data=type text="Type"}}  
+                        {{> listinfo data=size text="Size"}}
+                        {{> listcheck data=automatic text='Automatic'}}
+                    </ul>
+                {{/with}}
+            {{/with}}
+
+            <br />
+            <br />
+
+            <span class="fs-5">Safety</span>
+            <hr />
+            <br />
+
+            {{#with safety}}
+                {{#with airbags}}
+                    <span class="badge text-bg-primary p-2 w-50">Airbags</span>
+                    <ul class="list-group">
+                        {{> listinfo data=front text="Front"}}
+                        {{> listinfo data=side text="Side"}}
+                        {{> listinfo data=knee text="Knee"}}
+                        {{> listinfo data=rear text="Rear"}}
+                    </ul>
+                {{/with}}
+
+                <br />
+
+                {{#with assistance}}
+                    <span class="badge text-bg-primary p-2 w-50">Assistance</span>
+                    <ul class="list-group">
+                       {{> listcheck data=blind_spot_monitoring text='Blind Spot Monitoring'}}
+                       {{> listcheck data=rear_cross_traffic_alert text='Rear Cross Traffic Alert'}}
+                       {{> listcheck data=lane_departure_warning text='Lane Departure Warning'}}
+                       {{> listcheck data=adaptive_cruise_control text='Adaptive Cruise Control'}}
+                       {{> listcheck data=collision_warning text='Collision Warning'}}
+                    </ul>
+                {{/with}}
+            {{/with}}
+        {{/with}}
+    </div>
+    
+    <br />
+    <br />
+
+    <div>
+        {{#with engine}}
+            <span class="fs-4">Engine</span>
+            <br />
+            <br />
+
+            <span class="fs-5">Сomposition</span>
+            <hr />
+            <br />
+
+            <span class="badge text-bg-primary p-2 w-50">Details</span>
+            <ul class="list-group">
+                {{> listinfo data=type text="Type"}}
+                {{> listinfo data=displacement text="Displacement"}}                   
+                {{> listinfo data=horsepower text="Horsepower"}}
+                {{> listinfo data=torque text="Torque"}}
+            </ul>
+
+            <br />
+
+            {{#with transmission}}
+                <span class="badge text-bg-primary p-2 w-50">Transmission</span>
+                <ul class="list-group">
+                    {{> listinfo data=type text="Type"}}
+                    {{> listinfo data=gears text="Gears"}}
+                </ul>
+            {{/with}}
+        {{/with}}
+    </div>
+
+    <br />
+    <br />
+
+    <div>
+        {{#with fuel_economy}}
+            <span class="fs-4">Fuel Economy</span>
+            <hr />
+            <br />
+
+            <span class="badge text-bg-primary p-2 w-50">Economy</span>
+            <ul class="list-group">
+                {{> listinfo data=city text="City"}}
+                {{> listinfo data=highway text="Highway"}}                   
+                {{> listinfo data=combined text="Combined"}}
+            </ul>
+        {{/with}}
+    </div>
+
+    <br />
+    <br />
+
+    <div>
+        {{#with price}}
+            <span class="fs-4">Price</span>
+            <hr />
+            <br />
+
+            <span class="badge text-bg-primary p-2 w-50">Result</span>
+            <ul class="list-group">
+                {{> listinfo data=base text="Base"}}
+                {{> listinfo data=destination text="Destination"}} 
+            </ul>
+
+            <br />
+
+            {{#with options}}
+                <ul class="list-group">
+                    {{> listinfo data=navigation text="Navigation"}}
+                    {{> listinfo data=moonroof text="Moonroof"}}
+                    {{> listinfo data=premium_paint text="Premium Paint"}}
+                </ul>
+            {{/with}}
+
+            <br />
+
+            <ul class="list-group">
+                {{> listinfo data=total text="Total"}}
+            </ul>
+        {{/with}}
+    </div>
+  </main>
+</div>
