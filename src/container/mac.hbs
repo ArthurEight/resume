@@ -1,0 +1,192 @@
+<div>
+  <main>
+    <nav
+      id='navbar-example2'
+      class='navbar bg-body-tertiary w-75 p-2'
+    >
+      <a class='navbar-brand' href='#'>
+        <h2>
+          {{name}}
+        </h2>
+        {{category}}
+      </a>
+
+      <span class='badge bg-secondary fs-6'>
+        {{price}}$
+      </span>
+      <ul class='nav nav-pills'>
+        <li class='nav-item'>
+          <a
+            class='nav-link'
+            href='#scrollspyHeading1'
+          >Processor</a>
+        </li>
+        <li class='nav-item'>
+          <a
+            class='nav-link'
+            href='#scrollspyHeading2'
+          >Memory</a>
+        </li>
+        <li class='nav-item dropdown'>
+          <a
+            class='nav-link dropdown-toggle'
+            data-bs-toggle='dropdown'
+            href='#'
+            role='button'
+            aria-expanded='false'
+          >Details</a>
+          <ul class='dropdown-menu'>
+            <li><a
+                class='dropdown-item'
+                href='#scrollspyHeading3'
+              >Storge</a></li>
+            <li><a
+                class='dropdown-item'
+                href='#scrollspyHeading4'
+              >Display</a></li>
+            <li><a
+                class='dropdown-item'
+                href='#scrollspyHeading5'
+              >Graphics</a></li>
+            <li><a
+                class='dropdown-item'
+                href='#scrollspyHeading6'
+              >Ports</a></li>
+            <li><a
+                class='dropdown-item'
+                href='#scrollspyHeading7'
+              >Battery</a></li>
+            <li><hr class='dropdown-divider' /></li>
+            <li><a
+                class='dropdown-item'
+                href='#scrollspyHeading8'
+              >Other</a></li>
+            <li><a
+                class='dropdown-item'
+                href='#scrollspyHeading9'
+              >Accessories</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div
+      data-bs-spy='scroll'
+      data-bs-target='#navbar-example2'
+      data-bs-root-margin='0px 0px -40%'
+      data-bs-smooth-scroll='true'
+      class='scrollspy-example bg-body-tertiary p-3 rounded-2'
+      tabindex='0'
+    >
+    {{#with features}}
+        <h4 id='scrollspyHeading1'>Processor</h4>
+        <div>
+            
+            {{#with processor}}
+                <table class='table table-borderless w-75'>
+                    {{> tablenav data=brand text="Brand"}}
+                    {{> tablenav data=model text="Model"}}
+                    {{> tablenav data=speed text="Speed"}}
+                    {{> tablenav data=cores text="Cores"}}
+                    {{> tablenav data=cache text="Cache"}}
+                </table>
+            {{/with}}
+            
+        </div>
+
+        <h4 id='scrollspyHeading2'>Memory</h4>
+        <div>
+            {{#with memory}}
+                <table class='table table-borderless w-75'>
+                    {{> tablenav data=type text="Type"}}
+                    {{> tablenav data=size text="Size"}}
+                    {{> tablenav data=speed text="Speed"}}
+                </table>
+            {{/with}}
+        </div>
+
+        <h4 id='scrollspyHeading3'>Storge</h4>
+        <div>
+            {{#with storage}}
+                <table class='table table-borderless w-75'>
+                    {{> tablenav data=type text="Type"}}
+                    {{> tablenav data=size text="Size"}}
+                </table>
+            {{/with}}
+        </div>
+
+        <h4 id='scrollspyHeading4'>Display</h4>
+        <div>
+            {{#with display}}
+                <table class='table table-borderless w-75'>
+                    {{> tablenav data=size text="Size"}}
+                    {{> tablenav data=resolution text="Resolution"}}
+                    {{> tablenav data=technology text="Technology"}}
+                    {{> tablenav data=color_space text="Color Space"}}
+                    {{> tablenav data=brightness text="Brightness"}}
+                    {{> tablenav data=refresh_rate text="Refresh Rate"}}
+                </table>
+            {{/with}}
+        </div>
+
+        <h4 id='scrollspyHeading5'>Graphics</h4>
+        <div>
+            {{#with graphics}}
+                <table class='table table-borderless w-75'>
+                    {{> tablenav data=brand text="Brand"}}
+                    {{> tablenav data=model text="Model"}}
+                    {{> tablenav data=memory text="Memory"}}
+                </table>
+            {{/with}}
+        </div>
+
+        <h4 id='scrollspyHeading6'>Ports</h4>
+        <div>
+            <table class='table table-borderless w-75'>
+                {{#each ports}}
+                    {{> tablenav data=count text=type}}
+                    {{#if features}}
+                        {{> tablenav data=features text="Features"}}
+                    {{/if}}
+                {{/each}}
+            </table>
+        </div>
+
+        <h4 id='scrollspyHeading7'>Battery</h4>
+        <div>
+            <table class='table table-borderless w-75'>
+                {{#with battery}}
+                    {{> tablenav data=type text="Type"}}
+                    {{> tablenav data=capacity text="Capacity"}}
+                    {{> tablenav data=life text="Life"}}
+                {{/with}}
+            </table>
+        </div>
+
+        <h4 id='scrollspyHeading8'>Other</h4>
+        <div>
+            <table class='table table-borderless w-75'>
+                {{> tablenav data=weight text="Weight"}}
+                {{#with dimensions}}
+                    {{> tablenav data=height text="Height"}}
+                    {{> tablenav data=width text="Width"}}
+                    {{> tablenav data=depth text="Depth"}}
+                {{/with}}
+                {{> tablenav data=operating_system text="OS"}}
+            </table>
+        </div>
+
+        <h4 id='scrollspyHeading9'>Accessories</h4>
+        <div>
+            <table class='table table-borderless w-75'>
+                {{#each accessories}}
+                    {{> tablenav data=price text=name}}
+                {{/each}}
+            </table>
+        </div>
+
+        <p>
+            <span class='fs-5'>{{description}}</span>
+        </p>
+    {{/with}}
+  </main>
+</div>
