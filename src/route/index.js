@@ -278,8 +278,7 @@ router.get('/person', function (req, res) {
                             projects: [
                                 {
                                     name: 'Project Alpha',
-                                    description:
-                                        'Developing new software platform',
+                                    description: 'Developing new software platform',
                                     status: 'In Progress',
                                     teams: [
                                         {
@@ -294,11 +293,7 @@ router.get('/person', function (req, res) {
                                                     name: 'Alice Johnson',
                                                     title: 'Software Engineer',
                                                     email: 'alice.johnson@example.com',
-                                                    skills: [
-                                                        'Java',
-                                                        'Python',
-                                                        'SQL',
-                                                    ],
+                                                    skills: ['Java', 'Python', 'SQL'],
                                                     projects: [
                                                         {
                                                             name: 'Project A',
@@ -349,12 +344,7 @@ router.get('/bio', function (req, res) {
         deathplace: 'Princeton, New Jersey, United States',
         nationality: 'Swiss, German, American',
         occupation: 'Theoretical Physicist',
-        known_for: [
-            'Theory of Relativity',
-            'E=mc²',
-            'Photoelectric Effect',
-            'Brownian Motion',
-        ],
+        known_for: ['Theory of Relativity', 'E=mc²', 'Photoelectric Effect', 'Brownian Motion'],
         education: [
             {
                 degree: 'Doctor of Philosophy',
@@ -391,21 +381,11 @@ router.get('/bio', function (req, res) {
             {
                 title: 'Nobel Prize in Physics',
                 year: 1921,
-                description:
-                    'Awarded for his explanation of the photoelectric effect',
+                description: 'Awarded for his explanation of the photoelectric effect',
             },
         ],
-        influences: [
-            'Isaac Newton',
-            'James Clerk Maxwell',
-            'Hermann Minkowski',
-        ],
-        influenced: [
-            'Niels Bohr',
-            'Erwin Schrödinger',
-            'Werner Heisenberg',
-            'Richard Feynman',
-        ],
+        influences: ['Isaac Newton', 'James Clerk Maxwell', 'Hermann Minkowski'],
+        influenced: ['Niels Bohr', 'Erwin Schrödinger', 'Werner Heisenberg', 'Richard Feynman'],
         quotes: [
             'Imagination is more important than knowledge.',
             'I have no special talent. I am only passionately curious.',
@@ -532,13 +512,11 @@ router.get('/web', function (req, res) {
                     elements: [
                         {
                             name: 'div',
-                            description:
-                                'Defines a division or a section in an HTML document.',
+                            description: 'Defines a division or a section in an HTML document.',
                             attributes: [
                                 {
                                     value: 'id',
-                                    description:
-                                        'Specifies a unique id for an HTML element.',
+                                    description: 'Specifies a unique id for an HTML element.',
                                 },
                                 {
                                     value: 'class',
@@ -549,13 +527,11 @@ router.get('/web', function (req, res) {
                         },
                         {
                             name: 'p',
-                            description:
-                                'Defines a paragraph in an HTML document.',
+                            description: 'Defines a paragraph in an HTML document.',
                             attributes: [
                                 {
                                     value: 'id',
-                                    description:
-                                        'Specifies a unique id for an HTML element.',
+                                    description: 'Specifies a unique id for an HTML element.',
                                 },
                                 {
                                     value: 'class',
@@ -588,18 +564,15 @@ router.get('/web', function (req, res) {
                         },
                         {
                             name: 'background-color',
-                            description:
-                                'Sets the background color of an element.',
+                            description: 'Sets the background color of an element.',
                             values: [
                                 {
                                     value: 'white',
-                                    description:
-                                        'Sets the background color to white.',
+                                    description: 'Sets the background color to white.',
                                 },
                                 {
                                     value: 'black',
-                                    description:
-                                        'Sets the background color to black.',
+                                    description: 'Sets the background color to black.',
                                 },
                             ],
                         },
@@ -619,21 +592,18 @@ router.get('/web', function (req, res) {
                                 {
                                     value: 'message',
                                     type: 'string',
-                                    description:
-                                        'The message to display in the alert box.',
+                                    description: 'The message to display in the alert box.',
                                 },
                             ],
                         },
                         {
                             name: 'getElementById()',
-                            description:
-                                'Returns the element with the specified ID.',
+                            description: 'Returns the element with the specified ID.',
                             parameters: [
                                 {
                                     value: 'id',
                                     type: 'string',
-                                    description:
-                                        'The ID of the element to find.',
+                                    description: 'The ID of the element to find.',
                                 },
                             ],
                         },
@@ -657,15 +627,7 @@ router.get('/js', function (req, res) {
             year: 1995,
             founder: 'Brendan Eich',
         },
-        types: [
-            'Number',
-            'String',
-            'Boolean',
-            'Null',
-            'Undefined',
-            'Symbol',
-            'Object',
-        ],
+        types: ['Number', 'String', 'Boolean', 'Null', 'Undefined', 'Symbol', 'Object'],
         syntax: {
             variables: ['var', 'let', 'const'],
             functions: ['function'],
@@ -691,16 +653,7 @@ router.get('/js', function (req, res) {
             'Lodash',
             'Moment.js',
         ],
-        tools: [
-            'Babel',
-            'Webpack',
-            'ESLint',
-            'Jest',
-            'Mocha',
-            'Chai',
-            'Selenium',
-            'Cypress',
-        ],
+        tools: ['Babel', 'Webpack', 'ESLint', 'Jest', 'Mocha', 'Chai', 'Selenium', 'Cypress'],
         community: [
             {
                 name: 'Stack Overflow',
@@ -952,8 +905,7 @@ router.get('/facebook', function (req, res) {
                     {
                         id: 1,
                         name: 'Hiking Enthusiasts',
-                        description:
-                            'A group for people who love hiking and the great outdoors',
+                        description: 'A group for people who love hiking and the great outdoors',
                         members: [
                             {
                                 id: 8,
@@ -1036,8 +988,7 @@ router.get('/facebook', function (req, res) {
                             {
                                 id: 4,
                                 name: 'Pet Lovers',
-                                description:
-                                    'A group for people who love their furry friends',
+                                description: 'A group for people who love their furry friends',
                                 members: [
                                     {
                                         id: 16,
@@ -1125,6 +1076,64 @@ router.get('/task21', function (req, res) {
                     url: 'https://getbootstrap.com/',
                 },
             ],
+        },
+    })
+})
+
+router.get('/task22', function (req, res) {
+    res.render('task22', {
+        layout: 'basic',
+        page: {
+            title: 'Resume | Task22',
+        },
+        page_header: {
+            title: 'InnovaMind',
+            description: 'Welcome to our wonderful community',
+        },
+        section: {
+            about_us: {
+                title_list: {
+                    main: 'InnovaMind',
+                    sub: 'InnovaMind is a forward-thinking startup focused on innovation. We are dedicated to creating efficient and powerful software through the use of first-class functions.',
+                },
+                button: {
+                    text: 'Show more',
+                },
+            },
+            advantage: {
+                title: 'Advantage',
+                efficiency: {
+                    title: 'Efficiency',
+                    sub_title: 'Streamline your software development',
+                    description:
+                        'Streamline your software development with our innovative platform...',
+                    button: 'Show more',
+                },
+                innovation: {
+                    title: 'Innovation',
+                    sub_title: 'Forward-thinking approach to programming',
+                    description:
+                        ' Stay ahead of the curve with our forward-thinking approach to programming...',
+                    button: 'Show more',
+                },
+                collaboration: {
+                    title: 'Collaboration',
+                    sub_title: 'Connect with like-minded developers',
+                    description:
+                        'Connect with a community of like-minded developers to share knowledge and insights...',
+                    button: 'Show more',
+                },
+            },
+            agreement: {
+                title: 'Terms of use',
+                info: {
+                    sub_title: 'Check out our requirements',
+                    detail: {
+                        text: 'By using or accessing the service, you agree to be bound by the terms and conditions outlined in the agreement.',
+                        button: 'Аccept',
+                    },
+                },
+            },
         },
     })
 })
