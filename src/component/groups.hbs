@@ -1,0 +1,67 @@
+<div class='accordion' id='Groups'>
+    <div class='accordion-item'>
+        <h2 class='accordion-header'>
+            <button
+                class='accordion-button collapsed'
+                type='button'
+                data-bs-toggle='collapse'
+                data-bs-target='#Two'
+                aria-expanded='false'
+                aria-controls='Two'
+            >
+                Groups
+            </button>
+        </h2>
+        <div id='Two' class='accordion-collapse collapse' data-bs-parent='#Groups'>
+            <div id={{id}} class='accordion-body'>
+                {{#if groups}}
+                    {{#each groups}}
+                        <div class='card'>
+                            <div class='card-body'>
+                                <span class='card-title fs-5'>{{name}}</span>
+                                <p class='card-text'>
+                                    {{description}}
+                                    <br />
+                                </p>
+                                <a href='#' class='btn btn-primary'>Join Group</a>
+
+                                <br />
+                                <br />
+
+                                <div class='accordion' id='Membres'>
+                                    <div class='accordion-item'>
+                                        <h2 class='accordion-header'>
+                                            <button
+                                                class='accordion-button collapsed'
+                                                type='button'
+                                                data-bs-toggle='collapse'
+                                                data-bs-target='#Six'
+                                                aria-expanded='false'
+                                                aria-controls='Six'
+                                            >
+                                                Members
+                                            </button>
+                                        </h2>
+                                        <div id='Six' class='accordion-collapse collapse' data-bs-parent='#Members'>
+                                            <div id={{id}} class='accordion-body'>
+                                            {{#each members}}
+                                                {{> people div=false}}
+                                                <br />
+                                            {{/each}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                    {{/each}}
+                {{else}}
+                    <span class='badge bg-primary'>There are
+                        no Groups</span>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
