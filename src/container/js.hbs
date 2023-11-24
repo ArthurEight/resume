@@ -1,9 +1,9 @@
 <div>
-  <main>
+  <div>
     {{> title big=true data=name}}
-    <hr />
+    <hr class="my-4"/>
     
-    <div>
+    <div class="mb-5">
         <p>{{description}}</p>
 
         <p>
@@ -14,23 +14,19 @@
         </p>
     </div>
 
-    <br />
-    <br />
+        {{> listprimary data=types text='Types'}}
 
-    {{> listprimary data=types text='Types'}}
+        {{> listprimary data=features text='Features'}}
 
-    {{> listprimary data=features text='Features'}}
+        {{> listprimary data=libraries text='Libraries'}}
 
-    {{> listprimary data=libraries text='Libraries'}}
+        {{> listprimary data=tools text='Tools'}}
 
-    {{> listprimary data=tools text='Tools'}}
 
-    <br />
-
-    <div>
+    <div class="mb-3">
         {{#with syntax}}
             <span class="badge text-bg-primary fs-6">Syntax</span>
-            <hr />
+            <hr class="my-3"/>
             
             {{> listsecondary data=variables text='Variables'}}
 
@@ -45,18 +41,18 @@
         {{/with}}
     </div>
 
-    <hr />
+    <hr class="mb-5"/>
 
     <div>
         <ul>
             <li>
                 <div>
-                    <span class='badge text-bg-primary fs-6 w-25'>Community</span>
-                    <br />
-                    <br />
+                    <div class="mb-2">
+                        <span class='badge text-bg-primary fs-6 w-25'>Community</span>
+                    </div>
                     {{#each community}}
-                        
-                            <ul class='list-group w-25 list-style-type-none'>
+                        <div class="mb-2">
+                            <ul class='list-group w-25 '>
                                 <li class='list-group-item text-center'>
                                    {{type}}
                                 </li>
@@ -64,8 +60,7 @@
                                     <button type="button" class="btn btn-link ">{{name}}</button>
                                 </li>
                             </ul>
-
-                            <br />
+                        </div>
                     {{/each}}
                 </div>
             </li>

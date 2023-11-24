@@ -1,16 +1,16 @@
 <div>
   {{#with main}}
     <main>
-        <section>
+        <section class="mb-4">
         {{> title big=true data='My Educationss'}}
-        <ul>
-            {{#each educations}}
-                <li>
-                    {{name}}
-                    {{#unless isEnd}} (ще в процесі) {{/unless}}
-                </li>
-            {{/each}}
-        </ul>
+            <ul>
+                {{#each educations}}
+                    <li>
+                        {{name}}
+                        {{#unless isEnd}} (ще в процесі) {{/unless}}
+                    </li>
+                {{/each}}
+            </ul>
         </section>
 
         <section>

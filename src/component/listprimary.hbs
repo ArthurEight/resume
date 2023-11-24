@@ -1,18 +1,14 @@
-<div>
-  <span class='badge text-bg-primary fs-6'>{{text}}</span>
-  <hr />
+<div class='mb-5'>
+    <span class='badge text-bg-primary fs-6'>{{text}}</span>
+    <hr class='my-3' />
 
-  {{#each data}}
-    <ul>
-      <li>
-        <div>
-          <span
-            class='badge text-bg-secondary p-2'
-          >{{this}}</span>
-        </div>
-      </li>
-    </ul>
-  {{/each}}
+    {{#each data}}
+        <ul>
+            <li>
+                <div>
+                    <span class='badge text-bg-secondary p-2'>{{this}}</span>
+                </div>
+            </li>
+        </ul>
+    {{/each}}
 </div>
-
-<br />

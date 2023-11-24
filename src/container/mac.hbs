@@ -1,86 +1,84 @@
-<div>
-  <main>
+<main>
     <nav
-      id='navbar-example2'
-      class='navbar bg-body-tertiary w-75 p-2'
+        id='navbar-example2'
+        class='navbar bg-body-tertiary w-75 p-2'
     >
-      <a class='navbar-brand' href='#'>
+        <a class='navbar-brand' href='#'>
         <h2>
-          {{name}}
+            {{name}}
         </h2>
         {{category}}
-      </a>
+        </a>
 
-      <span class='badge bg-secondary fs-6'>
+        <span class='badge bg-secondary fs-6'>
         {{price}}$
-      </span>
-      <ul class='nav nav-pills'>
+        </span>
+        <ul class='nav nav-pills'>
         <li class='nav-item'>
-          <a
+            <a
             class='nav-link'
             href='#scrollspyHeading1'
-          >Processor</a>
+            >Processor</a>
         </li>
         <li class='nav-item'>
-          <a
+            <a
             class='nav-link'
             href='#scrollspyHeading2'
-          >Memory</a>
+            >Memory</a>
         </li>
         <li class='nav-item dropdown'>
-          <a
+            <a
             class='nav-link dropdown-toggle'
             data-bs-toggle='dropdown'
             href='#'
             role='button'
             aria-expanded='false'
-          >Details</a>
-          <ul class='dropdown-menu'>
+            >Details</a>
+            <ul class='dropdown-menu'>
             <li><a
                 class='dropdown-item'
                 href='#scrollspyHeading3'
-              >Storge</a></li>
+                >Storge</a></li>
             <li><a
                 class='dropdown-item'
                 href='#scrollspyHeading4'
-              >Display</a></li>
+                >Display</a></li>
             <li><a
                 class='dropdown-item'
                 href='#scrollspyHeading5'
-              >Graphics</a></li>
+                >Graphics</a></li>
             <li><a
                 class='dropdown-item'
                 href='#scrollspyHeading6'
-              >Ports</a></li>
+                >Ports</a></li>
             <li><a
                 class='dropdown-item'
                 href='#scrollspyHeading7'
-              >Battery</a></li>
+                >Battery</a></li>
             <li><hr class='dropdown-divider' /></li>
             <li><a
                 class='dropdown-item'
                 href='#scrollspyHeading8'
-              >Other</a></li>
+                >Other</a></li>
             <li><a
                 class='dropdown-item'
                 href='#scrollspyHeading9'
-              >Accessories</a></li>
-          </ul>
+                >Accessories</a></li>
+            </ul>
         </li>
-      </ul>
+        </ul>
     </nav>
     <div
-      data-bs-spy='scroll'
-      data-bs-target='#navbar-example2'
-      data-bs-root-margin='0px 0px -40%'
-      data-bs-smooth-scroll='true'
-      class='scrollspy-example bg-body-tertiary p-3 rounded-2'
-      tabindex='0'
+        data-bs-spy='scroll'
+        data-bs-target='#navbar-example2'
+        data-bs-root-margin='0px 0px -40%'
+        data-bs-smooth-scroll='true'
+        class='scrollspy-example bg-body-tertiary p-3 rounded-2'
+        tabindex='0'
     >
     {{#with features}}
         <h4 id='scrollspyHeading1'>Processor</h4>
         <div>
-            
             {{#with processor}}
                 <table class='table table-borderless w-75'>
                     {{> tablenav data=brand text="Brand"}}
@@ -90,7 +88,6 @@
                     {{> tablenav data=cache text="Cache"}}
                 </table>
             {{/with}}
-            
         </div>
 
         <h4 id='scrollspyHeading2'>Memory</h4>
@@ -188,5 +185,4 @@
             <span class='fs-5'>{{description}}</span>
         </p>
     {{/with}}
-  </main>
-</div>
+</main>

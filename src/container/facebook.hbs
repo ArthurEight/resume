@@ -1,13 +1,13 @@
-<div>
-    <main>
-        <h2>{{name}}
-            <span class='badge bg-secondary'>Users</span>
-        </h2>
-        <hr />
+<main>
+    <h2>{{name}}
+        <span class='badge bg-secondary'>Users</span>
+    </h2>
+    <hr class="my-4"/>
 
-        {{#each users}}
-            <div class='card' id={{id}}>
-                <div class='card-body'>
+    {{#each users}}
+        <div class='card mb-5' id={{id}}>
+            <div class='card-body'>
+                <div class="mb-4">
                     <span class='card-title fs-5'>{{name}}</span>
                     <p class='card-text'>
                         {{gender}}
@@ -17,85 +17,87 @@
                         {{age}}
                         <br />
                     </p>
+                </div>
+                <div class="mb-4">
                     <a href='#' class='btn btn-primary'>Add friend</a>
+                </div>
+                
 
-                    <br />
-                    <br />
 
-                    <div class='accordion' id='Friends'>
-                        <div class='accordion-item'>
-                            <h2 class='accordion-header'>
-                                <button
-                                    class='accordion-button collapsed'
-                                    type='button'
-                                    data-bs-toggle='collapse'
-                                    data-bs-target='#One'
-                                    aria-expanded='false'
-                                    aria-controls='One'
-                                >
-                                    Friends
-                                </button>
-                            </h2>
-                            <div id='One' class='accordion-collapse collapse' data-bs-parent='#Friends'>
-                                <div id={{id}} class='accordion-body'>
-                                    {{#each friends}}
-                                        {{> people div=true}}
-                                                        <div class='accordion' id='MutualFriends'>
-                                                            <div class='accordion-item'>
-                                                                <h2 class='accordion-header'>
-                                                                    <button
-                                                                        class='accordion-button collapsed'
-                                                                        type='button'
-                                                                        data-bs-toggle='collapse'
-                                                                        data-bs-target='#Three'
-                                                                        aria-expanded='false'
-                                                                        aria-controls='Three'
-                                                                    >
-                                                                        Mutual
-                                                                        Friends
-                                                                    </button>
-                                                                </h2>
-                                                                <div id='Three' class='accordion-collapse collapse' data-bs-parent='#accordionFlushExample'>
-                                                                    <div class='accordion-body'>
-                                                                        {{#each mutual_friends}}
-                                                                            {{> people div=true}}
-                                                                                            <div class='accordion' id='MutualFriends'>
-                                                                                                <div class='accordion-item'>
-                                                                                                    <h2 class='accordion-header'>
-                                                                                                        <button
-                                                                                                            class='accordion-button collapsed'
-                                                                                                            type='button'
-                                                                                                            data-bs-toggle='collapse'
-                                                                                                            data-bs-target='#Four'
-                                                                                                            aria-expanded='false'
-                                                                                                            aria-controls='Four'
-                                                                                                        >
-                                                                                                            Mutual
-                                                                                                            Friends
-                                                                                                        </button>
-                                                                                                    </h2>
-                                                                                                    <div id='Four' class='accordion-collapse collapse' data-bs-parent='#accordionFlushExample'>
-                                                                                                        {{#if mutual_friends}}
-                                                                                                            {{#each mutual_friends}}
-                                                                                                                {{> people div=false}}
-                                                                                                            {{/each}}
-                                                                                                        {{else}}
-                                                                                                            <br />
-
+                <div class='accordion mt-4' id='Friends'>
+                    <div class='accordion-item'>
+                        <h2 class='accordion-header'>
+                            <button
+                                class='accordion-button collapsed'
+                                type='button'
+                                data-bs-toggle='collapse'
+                                data-bs-target='#One'
+                                aria-expanded='false'
+                                aria-controls='One'
+                            >
+                                Friends
+                            </button>
+                        </h2>
+                        <div id='One' class='accordion-collapse collapse' data-bs-parent='#Friends'>
+                            <div id={{id}} class='accordion-body'>
+                                {{#each friends}}
+                                    {{> people div=true}}
+                                                    <div class='accordion' id='MutualFriends'>
+                                                        <div class='accordion-item'>
+                                                            <h2 class='accordion-header'>
+                                                                <button
+                                                                    class='accordion-button collapsed'
+                                                                    type='button'
+                                                                    data-bs-toggle='collapse'
+                                                                    data-bs-target='#Three'
+                                                                    aria-expanded='false'
+                                                                    aria-controls='Three'
+                                                                >
+                                                                    Mutual
+                                                                    Friends
+                                                                </button>
+                                                            </h2>
+                                                            <div id='Three' class='accordion-collapse collapse' data-bs-parent='#accordionFlushExample'>
+                                                                <div class='accordion-body'>
+                                                                    {{#each mutual_friends}}
+                                                                        {{> people div=true}}
+                                                                                        <div class='accordion' id='MutualFriends'>
+                                                                                            <div class='accordion-item'>
+                                                                                                <h2 class='accordion-header'>
+                                                                                                    <button
+                                                                                                        class='accordion-button collapsed'
+                                                                                                        type='button'
+                                                                                                        data-bs-toggle='collapse'
+                                                                                                        data-bs-target='#Four'
+                                                                                                        aria-expanded='false'
+                                                                                                        aria-controls='Four'
+                                                                                                    >
+                                                                                                        Mutual
+                                                                                                        Friends
+                                                                                                    </button>
+                                                                                                </h2>
+                                                                                                <div id='Four' class='accordion-collapse collapse' data-bs-parent='#accordionFlushExample'>
+                                                                                                    {{#if mutual_friends}}
+                                                                                                        {{#each mutual_friends}}
+                                                                                                            {{> people div=false}}
+                                                                                                        {{/each}}
+                                                                                                    {{else}}
+                                                                                                        <div class="m-3">
                                                                                                             <span class='badge bg-primary'>
                                                                                                                 There are not Mutual Friends
                                                                                                             </span>
-                                                                                                        {{/if}}
-                                                                                                    </div>
+                                                                                                        </div>
+                                                                                                        
+                                                                                                    {{/if}}
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <br />
-                                                                        {{/each}}
-                                                                    </div>
+                                                                        </div>
+                                                                        <br />
+                                                                    {{/each}}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -103,23 +105,22 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <br />
+                                    <br />
 
-                                        {{#if groups}}
-                                            {{> groups}}
-                                        {{/if}}
-                                    {{/each}}
-                                </div>
+                                    {{#if groups}}
+                                        {{> groups}}
+                                    {{/if}}
+                                {{/each}}
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="mt-2">
                     {{> groups}}
                 </div>
             </div>
-
-            <br />
-            <br />
-        {{/each}}
-    </main>
-</div>
+        </div>
+    {{/each}}
+</main>

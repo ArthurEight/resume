@@ -1,13 +1,11 @@
 <div>
     <main>
         {{> title big=true data="Biography"}}
-        <hr />
+        <hr class="my-4"/>
 
-        <h3>{{name}}</h3>
-        <br />
-        <br />
+        <h3 class="mb-5">{{name}}</h3>
 
-        <div>
+        <div class="mb-4">
             <dl>
                 <dt>
                     <strong>Born:</strong>
@@ -20,7 +18,7 @@
             </dl>
         </div>
 
-        <div>
+        <div class="mb-4">
             <dl>
                 <dt>
                     <strong>Dead:</strong>
@@ -33,7 +31,7 @@
             </dl>
         </div>
 
-        <div>
+        <div class="mb-4">
             <dl>
                 <dt>
                     <strong>Nationality:</strong>
@@ -46,7 +44,7 @@
             </dl>
         </div>
 
-        <div>
+        <div class="mb-4">
             <dl>
                 <dt>
                     <strong>Occupation:</strong>
@@ -59,7 +57,7 @@
             </dl>
         </div>
 
-        <div>
+        <div class="mb-4">
             <strong>Known For:</strong>
             {{#each known_for}}
                 <ul>
@@ -72,7 +70,7 @@
             {{/each}}
         </div>
 
-        <div>
+        <div class="mb-4">
             {{#each education}}
                 <dl>
                     <dt>
@@ -88,12 +86,12 @@
             {{/each}}
         </div>
 
-        <div>
+        <div class="mb-4">
             <b>Notable Publications</b>
             {{#each notable_publications}}
                 <ul>
                     <li>
-                        <div>
+                        <div class="mb-4">
                             {{title}}
                             <br />
 
@@ -110,12 +108,12 @@
             {{/each}}
         </div>
 
-        <div>
+        <div class="mb-4">
             <strong>Partners:</strong>
             {{#each partners}}
                 <ul>
                     <li>
-                        <div>
+                        <div class="mb-4">
                             <b>Name:</b>
                             {{name}}
                             <br />
@@ -133,12 +131,12 @@
             {{/each}}
         </div>
 
-        <div>
+        <div class="mb-4">
             <strong>Awards:</strong>
             {{#each awards}}
                 <ul>
                     <li>
-                        <div>
+                        <div class="mb-4">
                             {{title}}, {{year}}
                             <br />
 
@@ -151,7 +149,7 @@
             {{/each}}
         </div>
 
-        <div>
+        <div class="mb-4">
             <strong>Influences:</strong>
             {{#each influences}}
                 <ul>
@@ -164,7 +162,7 @@
             {{/each}}
         </div>
 
-        <div>
+        <div class="mb-4">
             <strong>Influenced</strong>
             {{#each influenced}}
                 <ul>
@@ -177,7 +175,7 @@
             {{/each}}
         </div>
 
-        <div>
+        <div class="mb-4">
             <strong>Quotes:</strong>
             {{#each quotes}}
                 <ul>
@@ -190,7 +188,7 @@
             {{/each}}
         </div>
 
-        <div>
+        <div class="mb-4">
             <strong>Major Discoveries:</strong>
             {{#each major_discoveries}}
                 <ul>
@@ -208,7 +206,7 @@
             {{/each}}
         </div>
 
-        <div>
+        <div class="mb-4">
             <strong>Contributions:</strong>
             {{#with contributions}}
                 {{title}}
