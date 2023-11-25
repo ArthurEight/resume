@@ -1,18 +1,5 @@
 <main>
-    {{#with navigation}} 
-        <section class="mb-5">
-            <div class='card'>
-                <div class='nav'>
-                    {{#each links}}
-                        <div class='nav-item'>
-                            <a href='{{href}}' class='nav-link'>{{text}}</a>
-                        </div>
-                    {{/each}}
-                </div>
-            </div>
-        </section>
-    {{/with}}
-    
+    {{> menu}}
 
     {{#with newsBlock}}
         <section>
@@ -62,49 +49,14 @@
                         {{/each}}
                     </div>
                 </div>
-                {{#each cards}}
-                    <div class="col-4 mb-4">
-                        <div class='card'>
-                            <img src='{{image}}' class='card-img-top' alt='#' />
-                            <div class='card-title pt-2 ps-3'>
-                                <h5 class="mb-1">{{title}}</h5>
-                                {{#if isHot}}
-                                    <span class='badge text-bg-warning text-white text-uppercase'>Hot!</span>
-                                {{/if}}
-
-                                {{#if isNew}}
-                                    <span class='badge text-bg-primary'>New</span>
-                                {{/if}}
-                            </div>
-                            <div class='card-body'>
-                                <p class="mb-0">{{description}}</p>
-                            </div>
-                        </div>
-                    </div>
-                {{/each}}
+                {{> cardsBlock}}
             </div>
         </section>
     {{/with}}
 
     <hr class='my-5' />
 
-    {{#with subscribe}}
-        <section>
-            <div class="card p-2 bg-dark text-white">
-                <div class="card-title">
-                    <h2>{{header}}</h2>
-                </div>
-                <div>
-                    <p class="mb-2">{{description}}</p>
-                    {{#each buttons}}
-                        <div class="mb-2">
-                            <a href="{{link}}" class="btn btn-primary">{{text}}</a>
-                        </div>
-                    {{/each}}
-                </div>
-            </div>
-        </section>
-    {{/with}}
+    {{> subscribeBlock}}
 
     <hr class='my-5' />
 
@@ -128,17 +80,5 @@
 
     <hr class='mt-5 mb-3' />
 
-    <section class="row">
-        {{#each footer}}
-            <div class='col-2'>
-                {{#each this}}
-                    <div class='nav flex-column'>
-                        <div class='nav-item'>     
-                            <a href='{{link}}' class='nav-link'>{{text}}</a>
-                        </div>
-                    </div>
-                {{/each}}
-            </div>
-        {{/each}}
-    </section>
+    {{> footershop}}
 </main>
