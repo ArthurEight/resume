@@ -6,22 +6,22 @@
 <div>
     {{#with main}}
         <main>
-            <section>
-            {{> title big=true data=summary.title}}
-            <div>
-                <p>
-                {{summary.text}}
-                </p>
-            </div>
+            <section class="mb-3">
+                {{> title big=true data=summary.title}}
+                <div>
+                    <p>
+                    {{summary.text}}
+                    </p>
+                </div>
             </section>
 
             {{#with experience}}
             <section>
                 {{> title big=false data=title}}
                 <div>
-                <p>
-                    {{text}}
-                </p>
+                    <p>
+                        {{text}}
+                    </p>
                 </div>
             </section>
             {{/with}}

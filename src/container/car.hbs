@@ -1,9 +1,9 @@
 <div>
   <main>
     {{> title big=true data=make}}
-    <hr />
+    <hr class="my-4"/>
 
-    <div>
+    <div class="mb-4">
         <span class="fs-4">General Characteristics</span>
         <br />
         <br />
@@ -19,7 +19,7 @@
     
     <br />
 
-    <div>
+    <div class="mb-4">
         {{#with features}}
             <span class="fs-4">Features</span>
             <br />
@@ -147,11 +147,8 @@
             {{/with}}
         {{/with}}
     </div>
-    
-    <br />
-    <br />
 
-    <div>
+    <div class="mb-4">
         {{#with engine}}
             <span class="fs-4">Engine</span>
             <br />
@@ -181,10 +178,7 @@
         {{/with}}
     </div>
 
-    <br />
-    <br />
-
-    <div>
+    <div class="mb-4">
         {{#with fuel_economy}}
             <span class="fs-4">Fuel Economy</span>
             <hr />
@@ -199,10 +193,7 @@
         {{/with}}
     </div>
 
-    <br />
-    <br />
-
-    <div>
+    <div class="mb-4">
         {{#with price}}
             <span class="fs-4">Price</span>
             <hr />

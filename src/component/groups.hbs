@@ -12,22 +12,22 @@
                 Groups
             </button>
         </h2>
-        <div id='Two' class='accordion-collapse collapse' data-bs-parent='#Groups'>
+        <div id='Two' class='accordion-collapse collapse ' data-bs-parent='#Groups'>
             <div id={{id}} class='accordion-body'>
                 {{#if groups}}
                     {{#each groups}}
-                        <div class='card'>
+                        <div class='card mb-3'>
                             <div class='card-body'>
-                                <span class='card-title fs-5'>{{name}}</span>
-                                <p class='card-text'>
-                                    {{description}}
-                                    <br />
-                                </p>
-                                <a href='#' class='btn btn-primary'>Join Group</a>
-
-                                <br />
-                                <br />
-
+                                <div class="mb-4">
+                                    <span class='card-title fs-5'>{{name}}</span>
+                                    <p class='card-text'>
+                                        {{description}}
+                                        <br />
+                                    </p>
+                                </div>
+                                <div class="mb-4">
+                                    <a href='#' class='btn btn-primary'>Join Group</a>
+                                </div>
                                 <div class='accordion' id='Membres'>
                                     <div class='accordion-item'>
                                         <h2 class='accordion-header'>
@@ -54,12 +54,12 @@
                                 </div>
                             </div>
                         </div>
-                        <br />
-                        <br />
                     {{/each}}
                 {{else}}
-                    <span class='badge bg-primary'>There are
-                        no Groups</span>
+                    <div class="m-3">
+                        <span class='badge bg-primary'>There are
+                            no Groups</span>
+                    </div>
                 {{/if}}
             </div>
         </div>
