@@ -1,0 +1,29 @@
+{{#each itemList}}
+    <div class='my-3'>
+        <div class='row d-flex align-items-center'>
+            <div class='col-4'>
+                {{number}}
+                <h5 class='mt-2'>{{status}}</h5>
+            </div>
+            <div class='col-2'>
+                {{#with amount}}
+                    {{title}}:
+                    <h5 class='mt-2'>{{value}}</h5>
+                {{/with}}
+            </div>
+            <div class='col-4'>
+                {{#each images}}
+                    <img src='{{this}}' />
+                {{/each}}
+            </div>
+            <div class='col-2'>
+                {{#with button}}
+                    {{#if isPrimary}}
+                        <a href='link' class='btn btn-primary'>{{text}}</a>
+                    {{/if}}
+                {{/with}}
+            </div>
+            <hr class='mt-2' />
+        </div>
+    </div>
+{{/each}}
