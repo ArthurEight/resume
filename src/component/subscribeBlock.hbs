@@ -1,0 +1,17 @@
+{{#with subscribe}}
+    <section>
+        <div class='card p-2 bg-dark text-white'>
+            <div class='card-title'>
+                <h2>{{header}}</h2>
+            </div>
+            <div>
+                <p class='mb-2'>{{description}}</p>
+                {{#each buttons}}
+                    <div class='mb-2'>
+                        <a href='{{link}}' class='btn btn-primary'>{{text}}</a>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+{{/with}}

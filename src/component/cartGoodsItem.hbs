@@ -1,0 +1,38 @@
+<div class='card mb-4'>
+    <div class='card-body'>
+        <div class='row d-flex align-items-center'>
+            <div class='col-2'>
+                <img src='{{image}}' class='card-img' />
+            </div>
+            <div class='col-4'>
+                <h4>{{name}}</h4>
+                <p>{{description}}</p>
+            </div>
+            <div class='col-2'>
+                {{#with price}}
+                    {{title}}:
+                    <h4 class='mt-2'>{{value}}</h4>
+                {{/with}}
+            </div>
+            <div class='col-2'>
+                {{amount}}
+            </div>
+            <div class='col-2'>
+                {{#each buttons}}
+                    {{#if isPrimary}}
+                        <div>
+                            <button class='btn btn-primary mb-3'>{{text}}</button>
+                        </div>
+
+                    {{/if}}
+
+                    {{#if isDanger}}
+                        <div>
+                            <button class='btn btn-outline-danger'>{{text}}</button>
+                        </div>
+                    {{/if}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
