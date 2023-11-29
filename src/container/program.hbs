@@ -1,132 +1,151 @@
-<div>
-    <main>
-        {{> title big=true data='Excursion program'}}
-        <hr />
+<main>
+    {{> title big=true data='Excursion program'}}
+    <hr class="my-3"/>
 
-        {{#with program}}
-            {{#with excursion}}
-
-                <h3>{{name}}</h3>
-
-                {{#with location}}
-                    <em>
-                        {{city}},
-                        {{country}},
-                        <time datetime='{{date}}'>{{../date}}</time>
-                    </em>
-                {{/with}}
-
-                <br />
-
-
-                {{#each program}}
-                    <ul>
-                        <li>
-                            <div>
-                                {{name}}
-                                <br />
-
-                                <b>Type:</b>
-                                {{type}}
-                                <br />
-
-                                <b>Duration:</b>
-                                {{duration}}
-                                hours.
-                                <br />
-
-                                <br />
-
-                                {{#with details}}
-
-                                    {{#with museum}}
-                                        <ul>
-                                            <li>
-                                                <div>
-                                                    {{> place}}
-
-                                                    <b>Exhibits:</b>
-                                                    {{#each exhibits}}
-                                                        <ul>
-                                                            <li>
-                                                                <div>
-                                                                    {{name}}
-                                                                    <br />
-
-                                                                    <b>Artist:</b>
-                                                                    {{#if artist}}
-                                                                        {{artist}}
-                                                                    {{else}}
-                                                                        Unknown
-                                                                    {{/if}}
-                                                                    <br />
-
-                                                                    <p>{{description}}</p>
-
-                                                                    <br />
-
-                                                                    {{#if audio_guide}}
-                                                                        <i>There is an audio guide</i>
-                                                                    {{/if}}
-
-                                                                    <br />
-                                                                    <br />
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    {{/each}}
-
-                                                    {{#with ../guide}}
-                                                        {{> guide}}
-                                                    {{/with}}
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    {{/with}}
-
-                                    {{#with venue}}
-                                        <ul>
-                                            <li>
-                                                <div>
-                                                    {{> place}}
-
-                                                    <b>Performers:</b>
-
-                                                    <br />
-
-                                                    {{#each ../performers}}
-                                                        <ul>
-                                                            <li>
-                                                                <div>
-                                                                    {{name}}
-                                                                    <br />
-
-                                                                    {{type}}
-                                                                    <br />
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    {{/each}}
-
-                                                    <br />
-
-                                                    {{#with ../guide}}
-                                                        {{> guide}}
-                                                    {{/with}}
-                                                </div>
-                                            </li>
-                                        </ul>
-
-                                        
-                                    {{/with}}
-                                    <br />
-                                    <br />
-                                {{/with}}
+    {{#with program}}
+        {{#with excursion}}
+            <section>
+                <div class="card">
+                    <img src="https://picsum.photos/1920/1000" class="card-img-top" alt="#">
+                    <div class="card-header text-center p-3">
+                        <h2 class="mb-0">{{name}}</h2>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-4">
+                            <div class="text-center">
+                                <h3>Location</h3>
                             </div>
-                        </li>
-                    </ul>
-                {{/each}}
-            {{/with}}
+                            {{#with location}}
+                                <div class="card">
+                                    <img src="https://picsum.photos/1920/1000" class="card-img-top" alt="#">
+                                    <div class="card-header p-3 text-center">
+                                        <h4 class="mb-0">{{city}}, {{country}}</h4>
+                                    </div>
+                                </div>
+                            {{/with}}
+                        </div>
+                        <div class="col-8">
+                            <div class="text-center">
+                                <h3>Program</h3>
+                            </div>
+                            
+                            <div class="row">
+                                {{#each program}}
+                                    <div class="col-6">
+                                        <div class="card">
+                                        <img src="https://picsum.photos/1920/1000" class="card-img-top" alt="#">
+                                            <div class="card-header text-center p-3">
+                                                <h4 class="mb-0">{{name}}: {{type}}
+                                                    <span class="badge bg-primary">
+                                                        Duration: {{duration}} hours.
+                                                    </span>
+                                                </h4>
+                                            </div>
+                                            <div>
+                                                {{#with details}}
+                                                    {{#with museum}}
+                                                        <div class="p-3">
+                                                            <div>
+                                                                <h5>{{name}}</h5>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                {{#with location}}
+                                                                    {{address}}, 
+                                                                    {{city}}, 
+                                                                    {{country}}
+                                                                {{/with}}
+                                                            </div>
+                                                            <div class="row">
+                                                                {{#each exhibits}}
+                                                                    <div class="col-6">
+                                                                        <div class="card p-2 h-100">
+                                                                            <div class="card-header text-center h-100">
+                                                                                <h5>{{name}}</h5>
+                                                                            </div>
+                                                                            {{#if artist}}
+                                                                                <div class="my-3">
+                                                                                    {{artist}}
+                                                                                </div>
+                                                                            {{/if}}
+                                                                            
+                                                                            <div class="mb-3">
+                                                                                {{description}}
+                                                                            </div>
+                                                                            
+                                                                            <div>
+                                                                                {{#if audio_guide}}
+                                                                                    <span class="badge bg-success">There is an audio guide</span>
+                                                                                {{/if}}
+                                                                            </div>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                {{/each}}
+                                                            </div>
+                                                        </div>
+                                                    {{/with}}
+
+                                                    
+
+                                                    {{#with venue}}
+                                                        <div class="p-3">
+                                                            <div>
+                                                                <h5>{{name}}</h5>
+                                                            </div>
+                                                            <div class="mb-4">
+                                                                {{#with location}}
+                                                                    {{address}}, 
+                                                                    {{city}}, 
+                                                                    {{country}}
+                                                                {{/with}}
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="text-center">
+                                                                    <h5>Performers</h5>
+                                                                </div>
+                                                                {{#each ../performers}}
+                                                                    
+                                                                    <div class="mb-4 col-6">
+                                                                        <div class="card p-2 h-100">
+                                                                            <div class="text-center">
+                                                                                <h6>{{name}}, {{type}}</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                {{/each}}
+                                                            </div>
+                                                        </div>
+                                                    {{/with}}
+                                                    
+
+                                                    
+
+                                                    {{#with guide}}
+                                                        <div class="p-2">
+                                                            <div class="card p-2">
+                                                                <div class="card-header text-center p-3">
+                                                                    {{name}}
+                                                                </div>
+                                                                <div>
+                                                                    Language: {{language}}
+                                                                </div>
+                                                                <div>
+                                                                    Rating: {{rating}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    {{/with}}
+                                                {{/with}}
+                                            </div>
+                                        </div>  
+                                    </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         {{/with}}
-    </main>
-</div>
+    {{/with}}
+</main>
