@@ -1,0 +1,68 @@
+<div class='card mb-3'>
+    <img src='{{img}}' class='card-img-top' alt='#' />
+    <div class='p-3'>
+        <div class='mb-3'>
+            {{#if isHot}}
+                <span class='badge text-bg-warning text-white text-uppercase p-2 pe-3 ps-3 rounded-pill'>Hot!</span>
+            {{/if}}
+
+            {{#if isNew}}
+                <span class='badge text-bg-primary ms-2 p-2 pe-3 ps-3 rounded-pill'>Нове</span>
+            {{/if}}
+        </div>
+        <div class='mb-2'>
+            {{#if isFast}}
+                <div class='mb-2'>
+                    <span class='badge bg-success p-2'>Швидка доставка</span>
+                </div>
+            {{/if}}
+
+            {{#if isFree}}
+                <div>
+                    <span class='badge bg-secondary p-2'>Безкоштовна доставка</span>
+                </div>
+            {{/if}}
+        </div>
+        <div class='mb-3'>
+            <h5>{{name}}</h5>
+        </div>
+        <div class='mb-3'>
+            {{#with review}}
+                {{amount}}
+                {{text}}
+            {{/with}}
+        </div>
+        <div class='mb-3'>
+            <h4>{{price}}</h4>
+        </div>
+        <div class='mb-3'>
+            {{delivery}}
+        </div>
+        <div class='mb-3'>
+            {{#each buttons}}
+                {{#if isPrimary}}
+                    <div>
+                        <button class='btn btn-primary mb-1'>{{text}}</button>
+                    </div>
+
+                {{/if}}
+
+                {{#if isSecondary}}
+                    <div>
+                        <button class='btn btn-secondary'>{{text}}</button>
+                    </div>
+                {{/if}}
+            {{/each}}
+        </div>
+        <div>
+            <ul>
+                {{#each characteristics}}
+                    <li class='mb-2'>
+                        {{title}}:
+                        {{value}}
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
