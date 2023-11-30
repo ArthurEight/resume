@@ -1,33 +1,35 @@
-<table border='1'>
-  <caption>
-    Element
-    {{#if bracket}}
-      &lt;{{name}}&gt;
-    {{else}}
-      {{name}}
-    {{/if}}
-  </caption>
+<table class='table table-secondary'>
+    <caption>
 
-  <br />
+        {{description}}
+    </caption>
 
-  <thead>
-    <tr>
-      <th colspan='2'>{{description}}</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each data}}
-      <tr>
-        <td rowspan='2'>
-          {{value}}
-          {{#if type}}
-            ({{type}})
-          {{/if}}
-        </td>
-      </tr>
-      <tr>
-        <td colspan='2'>{{description}}</td>
-      </tr>
-    {{/each}}
-  </tbody>
+    <br />
+
+    <thead>
+        <tr>
+            <th scope='col'>Element
+                {{#if bracket}}
+                    &lt;{{name}}&gt;
+                {{else}}
+                    {{name}}
+                {{/if}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data}}
+            <tr>
+                <th rowspan='2'>
+                    {{value}}
+                    {{#if type}}
+                        ({{type}})
+                    {{/if}}
+                </th>
+            </tr>
+            <tr>
+                <td colspan='2'>{{description}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
 </table>

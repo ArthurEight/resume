@@ -1,227 +1,193 @@
-<div>
-    <main>
+<main>
+    <section>
         {{> title big=true data="Biography"}}
         <hr class="my-4"/>
 
         <h3 class="mb-5">{{name}}</h3>
+    </section>
 
-        <div class="mb-4">
-            <dl>
-                <dt>
-                    <strong>Born:</strong>
-                </dt>
-                <dd>
-                    <span>
-                        <time datetime="{{birthdate}}">{{birthdate}}</time>, {{birthplace}}
-                    </span>
-                </dd>
-            </dl>
-        </div>
-
-        <div class="mb-4">
-            <dl>
-                <dt>
-                    <strong>Dead:</strong>
-                </dt>
-                <dd>
-                    <span>
-                        <time datetime="{{deathdate}}">{{deathdate}}</time>, {{deathplace}}
-                    </span>
-                </dd>
-            </dl>
-        </div>
-
-        <div class="mb-4">
-            <dl>
-                <dt>
-                    <strong>Nationality:</strong>
-                </dt>
-                <dd>
-                    <span>
-                        {{nationality}}
-                    </span>
-                </dd>
-            </dl>
-        </div>
-
-        <div class="mb-4">
-            <dl>
-                <dt>
-                    <strong>Occupation:</strong>
-                </dt>
-                <dd>
-                    <span>
-                        {{occupation}}
-                    </span>
-                </dd>
-            </dl>
-        </div>
-
-        <div class="mb-4">
-            <strong>Known For:</strong>
-            {{#each known_for}}
-                <ul>
-                    <li>
-                        <div>
-                            {{this}}
-                        </div>
-                    </li>
-                </ul>
-            {{/each}}
-        </div>
-
-        <div class="mb-4">
-            {{#each education}}
-                <dl>
-                    <dt>
-                        <strong>Education:</strong>
-                    </dt>
-                    <dd>
-                        {{degree}},
-                        {{field}},
-                        {{institution}},
-                        {{year}}
-                    </dd>
-                </dl>
-            {{/each}}
-        </div>
-
-        <div class="mb-4">
-            <b>Notable Publications</b>
-            {{#each notable_publications}}
-                <ul>
-                    <li>
-                        <div class="mb-4">
-                            {{title}}
-                            <br />
-
-                            <b>Year:</b>
-                            {{year}}
-                            <br />
-
-                            <b>Publisher</b>
-                            {{publisher}}
-                            <br />
-                        </div>
-                    </li>
-                </ul>
-            {{/each}}
-        </div>
-
-        <div class="mb-4">
-            <strong>Partners:</strong>
-            {{#each partners}}
-                <ul>
-                    <li>
-                        <div class="mb-4">
-                            <b>Name:</b>
-                            {{name}}
-                            <br />
-
-                            <b>Relationship:</b>
-                            {{relationship}}
-                            <br />
-
-                            <b>Years:</b>
-                            {{years}}
-                            <br />
-                        </div>
-                    </li>
-                </ul>
-            {{/each}}
-        </div>
-
-        <div class="mb-4">
-            <strong>Awards:</strong>
-            {{#each awards}}
-                <ul>
-                    <li>
-                        <div class="mb-4">
-                            {{title}}, {{year}}
-                            <br />
-
-                            <p>
-                                {{description}}
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-            {{/each}}
-        </div>
-
-        <div class="mb-4">
-            <strong>Influences:</strong>
-            {{#each influences}}
-                <ul>
-                    <li>
-                        <div>
-                            {{this}}
-                        </div>
-                    </li>
-                </ul>
-            {{/each}}
-        </div>
-
-        <div class="mb-4">
-            <strong>Influenced</strong>
-            {{#each influenced}}
-                <ul>
-                    <li>
-                        <div>
-                            {{this}}
-                        </div>
-                    </li>
-                </ul>
-            {{/each}}
-        </div>
-
-        <div class="mb-4">
-            <strong>Quotes:</strong>
-            {{#each quotes}}
-                <ul>
-                    <li>
-                        <div>
-                            <q>{{this}}</q>
-                        </div>
-                    </li>
-                </ul>
-            {{/each}}
-        </div>
-
-        <div class="mb-4">
-            <strong>Major Discoveries:</strong>
-            {{#each major_discoveries}}
-                <ul>
-                    <li>
-                        <div>
-                            {{title}}, {{year}}
-                            <br />
-
-                            <p>
-                                {{description}}
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-            {{/each}}
-        </div>
-
-        <div class="mb-4">
-            <strong>Contributions:</strong>
-            {{#with contributions}}
-                {{title}}
-                <br />
-
+    <section class="row">
+        <div class="col-8">
+            <div>
                 <p>
-                    {{description}}
+                    Albert Einstein is the most 
+                    famous theoretical physicist, 
+                    known for such things as
+                    <span class="fst-italic">
+                        {{#each known_for}}
+                            <a href="#">{{this}}</a>,
+                        {{/each}}
+                    </span>
+                    he is really a great person in the field of theoretical physics.
                 </p>
-                <br />
+            </div>
 
-                {{year}}
-                <br />
+            <div class="mb-4">
+                <p>
+                    The first steps in his career were 
+                    getting an education in such a place as
+                    {{#each education}}
+                        {{institution}} in the field of {{field}} in {{year}}, 
+                        where he received a degree {{degree}}.
+                    {{/each}}
+                </p>
+            </div>
 
-                {{field}}
-            {{/with}}
+            <div class="mb-4">
+                <p class="fw-bold">
+                    <img src="/svg/info.svg" class="me-2 mb-1">Some of his most popular works
+                </p> 
+                {{#each notable_publications}}
+                    <div class="card p-2 mb-2">
+                        {{title}},
+                        {{year}},
+                        {{publisher}}
+                    </div>
+                {{/each}}
+            </div>
+
+            <div class="mb-4">
+                <p class="fw-bold">
+                   <img src="/svg/info.svg" class="me-1 mb-1"> Albert Einstein was also married twice
+                </p>
+                <div class="row">
+                    {{#each partners}}
+                        <div class="col-6">
+                            <div class="card">
+                                <img src="https://picsum.photos/400/400" class="card-img-top" alt="#">
+                                <div class="p-2">
+                                    {{name}},
+                                    {{relationship}},
+                                    {{years}}
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <p class="fw-bold">
+                    <img src="/svg/info.svg" class="me-2 mb-1">Awards
+                </p> 
+                    {{#each awards}}
+                        <div class="card p-2 mb-2">
+                            <div class="card-title">
+                                <h5>{{title}}, {{year}}</h5>
+                            </div>
+                            <div class="card-body">
+                                {{description}}      
+                            </div>
+                        </div>
+                    {{/each}}
+            </div>
+
+            <div>
+                <p>
+                    Like any other great person, 
+                    there are other people whose influence 
+                    had a significant measure on the creation 
+                    of a genius like Albert Einstein, such persons for him were
+                    <span class="fst-italic">
+                        {{#each influences}}
+                            <a href="#">{{this}}</a>,
+                        {{/each}}
+                    </span>
+                    they interested him in science and gave him an impetus to thirst for knowledge.
+                </p>
+            </div>
+            
+            <div>
+                <p>
+                    As other prominent people could influence 
+                    Albert's worldview, so he could do this for 
+                    his successors, there are indeed many, but 
+                    among them are such notables as
+                    <span class="fst-italic">
+                        {{#each influenced}}
+                            <a href="#">{{this}}</a>,
+                        {{/each}}
+                    </span>
+                    and yet, there are more and more people 
+                    who admire the most outstanding physicist.
+                </p>
+            </div>
+
+            <div class="my-5">
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <p>
+                            {{#each quotes}}
+                                {{this}}
+                            {{/each}}
+                        </p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        {{name}}
+                    </figcaption>
+                </figure>
+            </div>
+            
+            <div class="mb-4">
+                <p class="fw-bold">
+                    <img src="/svg/info.svg" class="me-2 mb-1">Great discoveries
+                </p> 
+                {{#each major_discoveries}}
+                    <div class="card p-2 mb-2">
+                        <div class="card-title">
+                            <h5>{{title}}, {{year}}</h5>
+                        </div>
+                        <div class="card-body">
+                            {{description}}      
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+
+            <div>
+                <p class="fw-bold">
+                    <img src="/svg/info.svg" class="me-2 mb-1">Contributions
+                </p> 
+                {{#with contributions}}
+                    <div class="card p-2 mb-2">
+                        <div class="card-title">
+                            <h5>{{title}}, {{year}}, {{field}}</h5>
+                        </div>
+                        <div class="card-body">
+                            {{description}}
+                        </div>
+                    </div>
+                {{/with}}
+            </div>
         </div>
-    </main>
-</div>
+        <div class="col-4">
+            <div class="card p-3">
+                <div class="card">
+                    <img src="https://picsum.photos/400/400" class="card-img-top" alt="#">
+                    <div class="p-2">
+                        {{name}}
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="#" class="btn btn-link">See all media</a>
+                </div>
+
+                <hr class="my-2 mb-3">
+                
+                <div class="mb-2">
+                    <span class="text-capitalize fw-bold">born:</span> {{birthdate}}, {{birthplace}}
+                </div>
+                <div class="mb-2">
+                    <span class="text-capitalize fw-bold">died:</span> {{deathdate}}, {{deathplace}}
+                </div>
+                <div class="mb-2">
+                    <span class="text-capitalize fw-bold">nationality:</span> {{nationality}}
+                </div>
+                <div class="mb-2">
+                    <span class="text-capitalize fw-bold">occupation:</span> {{occupation}}
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

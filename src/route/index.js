@@ -1,9 +1,5 @@
-// Підключаємо технологію express для back-end сервера
 const express = require('express')
-// Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
-
-// ================================================================
 
 var header = {
     name: {
@@ -32,22 +28,110 @@ var footer = {
     },
 }
 
-// ================================================================
-
-// router.get Створює нам один ентпоїнт
-
-//           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/', function (req, res) {
-    // res.render генерує нам HTML сторінку
-
-    //            ↙ cюди вводимо назву файлу з сontainer
-    res.render('index', {})
-    //                  ↑↑ сюди вводимо JSON дані
+    res.render('index', {
+        layout: 'index',
+        page: {
+            title: 'Resume',
+        },
+        nav: {
+            name: "Ім'я Прізвище",
+            project: 'Resume project',
+        },
+        listPages: {
+            title: 'Список сторінок',
+            description: `Тут вам потрібно написати інформацію про ваш проєкт. 
+                        Поки що можна написати будь-який текст`,
+            buttons: [
+                {
+                    href: '/summary',
+                    text: 'Summary',
+                },
+                {
+                    href: '/work',
+                    text: 'Work',
+                },
+                {
+                    href: '/web',
+                    text: 'Web',
+                },
+                {
+                    href: '/skills',
+                    text: 'Skills',
+                },
+                {
+                    href: '/bio',
+                    text: 'Bio',
+                },
+                {
+                    href: '/education',
+                    text: 'Education',
+                },
+                {
+                    href: '/person',
+                    text: 'Person',
+                },
+                {
+                    href: '/program',
+                    text: 'Program',
+                },
+                {
+                    href: '/car',
+                    text: 'Car',
+                },
+                {
+                    href: '/facebook',
+                    text: 'Facebook',
+                },
+                {
+                    href: '/js',
+                    text: 'JavaScript',
+                },
+                {
+                    href: '/mac',
+                    text: 'Mac',
+                },
+                {
+                    href: '/task21',
+                    text: 'Task21',
+                },
+                {
+                    href: '/task22',
+                    text: 'Task22',
+                },
+                {
+                    href: '/task31',
+                    text: 'Task31',
+                },
+                {
+                    href: '/shoporder',
+                    text: 'Shop Order',
+                },
+                {
+                    href: '/shopcart',
+                    text: 'Shop Cart',
+                },
+                {
+                    href: '/shophome',
+                    text: 'Shop Home',
+                },
+                {
+                    href: '/shopreview',
+                    text: 'Shop Review',
+                },
+                {
+                    href: '/shopprofile',
+                    text: 'Shop Profile',
+                },
+                {
+                    href: '/shopcatalog',
+                    text: 'Shop Catalog',
+                },
+            ],
+        },
+    })
 })
 
-// ================================================================
-
-//              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/summary', function (req, res) {
     res.render('summary', {
         page: {
@@ -323,7 +407,6 @@ router.get('/person', function (req, res) {
 })
 
 router.get('/bio', function (req, res) {
-    //             ↙ cюди вводимо назву файлу з сontainer
     res.render('bio', {
         layout: 'basic',
         page: {

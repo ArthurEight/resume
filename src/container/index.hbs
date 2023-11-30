@@ -1,11 +1,19 @@
-{{!-- 
-Це код container файлу для index сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
- --}}
-
-<h1>Hello world</h1>
-
-{{!-- 
-    Цей код містить лише те, що буде виводитись в <body>
-    Адже наш layout/default.hbs має вже структуру HTML
---}}
+<main>
+    <section>
+        {{#with listPages}}
+            <div class='mt-5 mb-3'>
+                <h3>{{title}}</h3>
+            </div>
+            <div class='mb-5'>
+                <p>{{description}}</p>
+            </div>
+            <div>
+                {{#each buttons}}
+                    <div class='mb-2'>
+                        <a href='{{href}}' class='btn btn-primary col-2'>{{text}}</a>
+                    </div>
+                {{/each}}
+            </div>
+        {{/with}}
+    </section>
+</main>
